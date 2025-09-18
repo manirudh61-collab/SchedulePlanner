@@ -1,0 +1,63 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* A light gray background */
+}
+.planner-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+    .planner-container {
+        grid-template-columns: 2fr 1fr; /* Two columns on larger screens */
+    }
+}
+.card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.completed {
+    text-decoration: line-through;
+    color: #9ca3af; /* Gray text for completed tasks */
+}
+.water-glass.filled {
+    color: #3b82f6; /* Blue color for filled glass */
+}
+input[type="time"], input[type="text"] {
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input[type="time"]:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+.btn {
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+.btn-danger {
+     background-color: #ef4444;
+     color: white;
+}
+.btn-danger:hover {
+    background-color: #dc2626;
+}

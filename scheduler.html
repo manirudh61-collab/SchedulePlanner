@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Schedule Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">Daily Schedule Planner</h1>
+            <p id="current-date" class="text-md text-gray-500 mt-1"></p>
+        </header>
+
+        <div class="planner-container">
+            <!-- Left Column: Schedule and Activity Input -->
+            <div class="flex flex-col gap-6">
+                <div class="card">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Add New Activity</h2>
+                    <form id="schedule-form" class="flex flex-col sm:flex-row gap-4 items-center">
+                        <input type="time" id="activity-time" class="w-full sm:w-auto" required>
+                        <input type="text" id="activity-name" placeholder="What's the plan?" class="flex-grow w-full" required>
+                        <button type="submit" class="btn btn-primary w-full sm:w-auto">Add Activity</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Today's Schedule</h2>
+                    <div id="schedule-list" class="space-y-3">
+                        <!-- Activities will be injected here by JavaScript -->
+                         <p class="text-gray-400 text-center py-4">Your schedule is empty. Add an activity to get started!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Water and Meal Trackers -->
+            <div class="flex flex-col gap-6">
+                <div class="card text-center">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Water Intake</h2>
+                    <div id="water-tracker" class="flex justify-center items-center gap-2 text-4xl text-gray-300">
+                        <!-- Water glasses will be injected here -->
+                    </div>
+                    <p class="mt-2 text-gray-600"><span id="water-count">0</span> / 8 glasses</p>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Meal Plan</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="breakfast" class="block text-sm font-medium text-gray-600 mb-1">🍳 Breakfast</label>
+                            <input type="text" id="breakfast" placeholder="e.g., Oatmeal with fruits" class="w-full meal-input">
+                        </div>
+                        <div>
+                            <label for="lunch" class="block text-sm font-medium text-gray-600 mb-1">🥗 Lunch</label>
+                            <input type="text" id="lunch" placeholder="e.g., Grilled chicken salad" class="w-full meal-input">
+                        </div>
+                        <div>
+                            <label for="dinner" class="block text-sm font-medium text-gray-600 mb-1">🍝 Dinner</label>
+                            <input type="text" id="dinner" placeholder="e.g., Salmon with roasted vegetables" class="w-full meal-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
